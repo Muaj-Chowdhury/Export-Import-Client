@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
+import useTitle from "../hooks/useTitle";
 const MyExports = () => {
+    useTitle("MyExports");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   console.log(products);

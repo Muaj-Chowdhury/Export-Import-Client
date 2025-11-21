@@ -3,8 +3,10 @@ import { AuthContext } from "../context/AuthContext";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
+import useTitle from "../hooks/useTitle";
 
 const MyImports = () => {
+  useTitle("MyImports");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);

@@ -2,8 +2,10 @@ import React from "react";
 import Banner from "../components/Banner";
 import { useLoaderData, useNavigation } from "react-router";
 import ProductCard from "../components/ProductCard";
+import useTitle from "../hooks/useTitle";
 
 const Home = () => {
+  useTitle("Home");
   const products = useLoaderData();
   const navigation = useNavigation();
   const loading = navigation.state === "loading";

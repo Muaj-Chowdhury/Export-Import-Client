@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import useTitle from "../hooks/useTitle";
 
 const LearnMore = () => {
+    useTitle("LearnMore");
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#006D77] to-[#00B4D8] text-white p-6 md:p-12">
       

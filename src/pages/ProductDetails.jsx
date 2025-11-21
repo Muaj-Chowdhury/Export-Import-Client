@@ -3,7 +3,9 @@ import { useLoaderData } from "react-router";
 import { motion } from "framer-motion";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
+import useTitle from "../hooks/useTitle";
 const ProductDetails = () => {
+  useTitle("ProductDetails");
   const { user } = useContext(AuthContext);
   // console.log(user.displayName)
   const result = useLoaderData();

@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
+import useTitle from "../hooks/useTitle";
 const AddExport = () => {
+  useTitle("AddExport");
   const {user} = useContext(AuthContext)
   const [form, setForm] = useState({
     name: "",

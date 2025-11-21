@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useLoaderData, useNavigation } from "react-router";
 import Loading from "./Loading";
 import ProductCard from "../components/ProductCard";
+import useTitle from "../hooks/useTitle";
 
 const AllProducts = () => {
+  useTitle("AllProducts");
   const fetchProducts = useLoaderData();
   const [products , setProducts] = useState(fetchProducts)
   

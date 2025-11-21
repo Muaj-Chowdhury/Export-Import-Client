@@ -27,6 +27,18 @@ const Navbar = () => {
     <>
       <li>
         <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "font-semibold text-white"
+              : "text-white/80 hover:text-white"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/allProducts"
           className={({ isActive }) =>
             isActive
@@ -74,6 +86,18 @@ const Navbar = () => {
           }
         >
           Add Export
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/support"
+          className={({ isActive }) =>
+            isActive
+              ? "font-semibold text-white"
+              : "text-white/80 hover:text-white"
+          }
+        >
+          Support
         </NavLink>
       </li>
     </>
