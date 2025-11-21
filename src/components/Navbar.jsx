@@ -1,15 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logOut()
       .then(() => console.log("Logged out"))
       .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   const navLinks = (
@@ -96,7 +107,15 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 p-3 shadow bg-[#001D3D] rounded-box w-52 text-white"
             >
+              <input
+                onChange={(e) => handleTheme(e.target.checked)}
+                defaultChecked={localStorage.getItem("theme") === "dark"}
+                type="checkbox"
+                value="synthwave"
+                className="ml-2 toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-blue-400 [--tglbg:var(--color-sky-500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:var(--color-blue-900)]"
+              />
               {navLinks}
+              
             </ul>
           </div>
 
@@ -110,14 +129,26 @@ const Navbar = () => {
         </div>
 
         {/* CENTER LINKS */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex gap-6 text-lg">
-            {navLinks}
-          </ul>
+        <div className="navbar-center hidden lg:flex justify-between">
+          <div>
+            <ul className="menu menu-horizontal px-1 flex gap-6 text-lg">
+              {navLinks}
+            </ul>
+          </div>
+          
         </div>
 
         {/* RIGHT SECTION */}
         <div className="navbar-end flex items-center gap-3">
+          <div>
+            <input
+              onChange={(e) => handleTheme(e.target.checked)}
+              defaultChecked={localStorage.getItem("theme") === "dark"}
+              type="checkbox"
+              value="synthwave"
+              className="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-blue-400 [--tglbg:var(--color-sky-500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:var(--color-blue-900)]"
+            />
+          </div>
           {!user ? (
             <div className="flex items-center gap-2">
               {/* LOGIN */}
