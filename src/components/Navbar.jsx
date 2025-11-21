@@ -124,7 +124,7 @@ const Navbar = () => {
             onClick={() => navigate("/")}
             className="text-2xl font-extrabold tracking-wide text-white"
           >
-            TradeLink<span className="text-[#48CAE4]">Global</span>
+            Trade<span className="text-[#48CAE4]">Flow</span>
           </button>
         </div>
 

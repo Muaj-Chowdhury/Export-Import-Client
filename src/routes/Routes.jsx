@@ -8,6 +8,7 @@ import MyImports from "../pages/MyImports";
 import AllProducts from "../pages/AllProducts";
 import AddExport from "../pages/AddExport";
 import MyExports from "../pages/MyExports";
+import LearnMore from "../pages/LearnMore";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path:"/myImports",
                 element:<MyImports></MyImports>,
+            },
+            {
+                path:"/learnMore",
+                element:<LearnMore></LearnMore>,
             },
             {
                 path:"/addExport",

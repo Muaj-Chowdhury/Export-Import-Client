@@ -1,6 +1,7 @@
 
 import React from "react";
 import ImportExportIcon from "../assets/import-export.svg?react";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -22,9 +23,11 @@ const Banner = () => {
             unified dashboard.
           </p>
 
+          <Link to={'/learnMore'}>
           <button className="px-6 py-3 rounded-xl text-white font-semibold shadow-lg bg-linear-to-r from-[#023E8A] to-[#48CAE4] hover:opacity-90 transition">
             Learn More
           </button>
+          </Link>
         </div>
 
         {/* Right Section */}
