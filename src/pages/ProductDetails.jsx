@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { useLoaderData } from "react-router";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { AuthContext } from "../context/AuthContext";
 import Swal from "sweetalert2";
@@ -48,9 +49,11 @@ const ProductDetails = () => {
       displayName,
       email,
     };
+
+    console.log(newProduct);
     // API call to import product and decrement quantity
 
-    fetch("http://localhost:3000/imports", {
+    fetch("https://export-import-server-pi.vercel.app/imports", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,15 +62,16 @@ const ProductDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         if (data.importResult.insertedId) {
-                Swal.fire({
-                  icon: "success",
-                  title: "Imported Successfully!",
-                  text: `${newProduct.name} has been Imported.`,
-                  timer: 1500,
-                  showConfirmButton: false,
-                });}
+          Swal.fire({
+            icon: "success",
+            title: "Imported Successfully!",
+            text: `${newProduct.name} has been Imported.`,
+            timer: 1500,
+            showConfirmButton: false,
+          });
+        }
 
         setProduct((prev) => ({
           ...prev,

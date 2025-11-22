@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
@@ -12,11 +13,12 @@ const MyImports = () => {
   const [loading, setLoading] = useState(true);
   console.log(products);
 
-
   // Fetch My Imports
 
   useEffect(() => {
-    fetch(`http://localhost:3000/myImports?email=${user.email}`)
+    fetch(
+      `https://export-import-server-pi.vercel.app/myImports?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data[0])
@@ -24,7 +26,6 @@ const MyImports = () => {
         setLoading(false);
       });
   }, [user, setProducts]);
-
 
   // Delete Imported Item
 
@@ -39,10 +40,10 @@ const MyImports = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/myImports/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
+        fetch(`https://export-import-server-pi.vercel.app/myImports/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
               console.log("deleted");
@@ -53,12 +54,11 @@ const MyImports = () => {
               });
 
               // remove from ui
-            setProducts((prev) => prev.filter((p) => p._id !== id))
+              setProducts((prev) => prev.filter((p) => p._id !== id));
             }
           });
       }
     });
-    
 
     if (loading) {
       return (
@@ -125,7 +125,7 @@ const MyImports = () => {
               <Link
                 to={`/productDetails/${product.productId}`}
                 className="py-3 text-center font-bold text-white rounded-xl
-                bg-linear-to-r bg-linear-to-r from-[#023E8A] to-[#48CAE4] shadow-lg hover:scale-105 transition"
+                 bg-linear-to-r from-[#023E8A] to-[#48CAE4] shadow-lg hover:scale-105 transition"
               >
                 See Details
               </Link>

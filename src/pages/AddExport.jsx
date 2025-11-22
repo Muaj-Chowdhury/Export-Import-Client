@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import useTitle from "../hooks/useTitle";
 const AddExport = () => {
   useTitle("AddExport");
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const [form, setForm] = useState({
     name: "",
     image: "",
@@ -16,7 +17,6 @@ const AddExport = () => {
   });
 
   const [errors, setErrors] = useState({});
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,20 +34,19 @@ const AddExport = () => {
     e.preventDefault();
 
     const newErrors = {};
-    if (!form.price || Number(form.price) <= 0)
-      {newErrors.price = "Price must be greater than 0";
-        return
-      }
-    if (!form.rating || Number(form.rating) < 1 || Number(form.rating) > 5)
-      {newErrors.rating = "Rating must be between 1 and 5";
-        return
-      }
-    if (!form.availableQuantity || Number(form.availableQuantity) < 1)
-      {newErrors.availableQuantity = "Quantity must be at least 1";
-        return
-      }
+    if (!form.price || Number(form.price) <= 0) {
+      newErrors.price = "Price must be greater than 0";
+      return;
+    }
+    if (!form.rating || Number(form.rating) < 1 || Number(form.rating) > 5) {
+      newErrors.rating = "Rating must be between 1 and 5";
+      return;
+    }
+    if (!form.availableQuantity || Number(form.availableQuantity) < 1) {
+      newErrors.availableQuantity = "Quantity must be at least 1";
+      return;
+    }
     setErrors(newErrors);
-  
 
     const productData = {
       ...form,
@@ -55,14 +54,13 @@ const AddExport = () => {
       rating: Number(form.rating),
       availableQuantity: Number(form.availableQuantity),
       created_at: new Date(),
-      exporterEmail: user.email
+      exporterEmail: user.email,
     };
 
-    fetch("http://localhost:3000/products", {
+    fetch("https://export-import-server-pi.vercel.app/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(productData),
-      
     })
       .then((res) => res.json())
       .then((data) => {
@@ -185,7 +183,7 @@ const AddExport = () => {
             <input
               type="number"
               name="availableQuantity"
-              value={form.availableQuantity}
+              value={Number(form.availableQuantity)}
               min="1"
               step="1"
               onChange={handleChange}
@@ -201,9 +199,8 @@ const AddExport = () => {
 
           <button
             type="submit"
-            
             className={`w-full py-4 rounded-2xl font-bold text-lg text-white transition-transform 
-                 bg-gradient-to-r from-[#6a11cb] to-[#2575fc] hover:scale-105
+                 bg-linear-to-r from-[#6a11cb] to-[#2575fc] hover:scale-105
             `}
           >
             Add Export / Product

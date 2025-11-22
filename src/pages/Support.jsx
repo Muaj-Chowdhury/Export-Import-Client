@@ -1,4 +1,5 @@
 import React from "react";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import useTitle from "../hooks/useTitle";
 
@@ -99,7 +100,7 @@ const Support = () => {
               className="px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white"
             ></textarea>
 
-            <button className="btn bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-3 rounded-xl text-lg">
+            <button className="btn bg-linear-to-r from-violet-600 to-indigo-600 text-white py-3 rounded-xl text-lg">
               Send Message
             </button>
           </form>

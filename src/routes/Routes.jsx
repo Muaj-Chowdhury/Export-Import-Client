@@ -20,22 +20,34 @@ const router = createBrowserRouter([
       {
         path: "/",
         Component: Home,
-        loader: () => fetch("http://localhost:3000/latest-products"),
+        loader: () =>
+          fetch("https://export-import-server-pi.vercel.app/latest-products"),
       },
       {
         path: "/allProducts",
         element: <AllProducts></AllProducts>,
-        loader: () => fetch("http://localhost:3000/all-products"),
+        loader: () =>
+          fetch("https://export-import-server-pi.vercel.app/all-products"),
       },
       {
         path: "/productDetails/:id",
-        element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/products/${params.id}`),
+          fetch(
+            `https://export-import-server-pi.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/myImports",
-        element: <PrivateRoute><MyImports></MyImports></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyImports></MyImports>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/learnMore", //Extra Page
@@ -43,11 +55,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addExport",
-        element: <PrivateRoute><AddExport></AddExport></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AddExport></AddExport>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myExports",
-        element: <PrivateRoute><MyExports></MyExports></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyExports></MyExports>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/register",
@@ -58,7 +78,7 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "/support",  //Extra Page
+        path: "/support", //Extra Page
         element: <Support></Support>,
       },
     ],
