@@ -62,7 +62,7 @@ const Register = () => {
       });
   };
   return (
-  <div className="flex justify-center min-h-screen items-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] p-4">
+  <div className="flex justify-center min-h-screen items-center bg-linear-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] p-4">
     <div className="card w-full max-w-sm shrink-0 shadow-2xl py-6 rounded-2xl 
     bg-white/10 backdrop-blur-md border border-white/20">
 
@@ -90,7 +90,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="btn w-full mt-4 text-white font-semibold bg-gradient-to-r from-[#ff512f] to-[#dd2476] border-none hover:opacity-90"
+            className="btn w-full mt-4 text-white font-semibold bg-linear-to-r from-[#ff512f] to-[#dd2476] border-none hover:opacity-90"
           >
             Register
           </button>

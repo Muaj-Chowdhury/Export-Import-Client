@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-slate-900 to-black">
+    <div className="flex justify-center items-center min-h-screen bg-linear-to-br from-blue-900 via-slate-900 to-black">
       <div className="card w-full max-w-sm py-8 px-6 backdrop-blur-xl bg-white/10 shadow-2xl rounded-2xl border border-white/10">
 
         {/* TITLE */}
@@ -90,7 +90,7 @@ const Login = () => {
           {/* Login Btn */}
           <button
             type="submit"
-            className="btn w-full mt-2 bg-gradient-to-r from-blue-600 to-indigo-700 border-none text-white font-semibold shadow-lg hover:opacity-90"
+            className="btn w-full mt-2 bg-linear-to-r from-blue-600 to-indigo-700 border-none text-white font-semibold shadow-lg hover:opacity-90"
           >
             Login
           </button>

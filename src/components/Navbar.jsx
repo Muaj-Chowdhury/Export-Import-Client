@@ -117,7 +117,7 @@ const Navbar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 sm:h-6 w-6"
+                className="h-6 sm:h-4 sm:w-4 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
