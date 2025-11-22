@@ -3,8 +3,8 @@
 A modern full-stack web application designed to **manage, monitor, and grow your import–export business seamlessly**.  
 The platform offers shipment tracking, product management, analytics, and a clean user experience with smooth animations.
 
-🔗 **Live Website:** https://your-live-client-url.vercel.app  
-🔗 **Live Server API:** https://your-live-server-url.vercel.app  
+🔗 **Live Website:** https://export-import-project.netlify.app/  
+🔗 **Live Server API:** https://export-import-server-pi.vercel.app/ 
 
 ---
 
