@@ -1,16 +1,42 @@
-# React + Vite
+# 📦 Export-Import Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern full-stack web application designed to **manage, monitor, and grow your import–export business seamlessly**.  
+The platform offers shipment tracking, product management, analytics, and a clean user experience with smooth animations.
 
-Currently, two official plugins are available:
+🔗 **Live Website:** https://your-live-client-url.vercel.app  
+🔗 **Live Server API:** https://your-live-server-url.vercel.app  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🚢 **Shipment Tracking:** Monitor and manage all import/export shipments from a unified dashboard.  
+- 📄 **Document Management:** Store and access trade-related documents in one place.  
+- 📊 **Analytics Dashboard:** Get insights with charts, KPIs, and performance statistics.  
+- 🛒 **Product Management:** Add, update, delete, and browse imported/exported products easily.  
+- 🔐 **Secure Authentication:** Email/password & Google Login using Firebase Authentication.  
+- 🎨 **Modern UI/UX:** Beautiful gradients, responsive design, and smooth Framer Motion animations.  
+- 🌗 **Dark & Light Theme Support:** Toggle between themes with one click.  
+- ⚙️ **Serverless Backend:** Express API deployed on Vercel with MongoDB database.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+### **Frontend**
+- React  
+- Tailwind CSS & DaisyUI  
+- Framer Motion  
+- Firebase Authentication  
+- React Router  
+
+### **Backend**
+- Node.js  
+- Express  
+- MongoDB  
+- Deployed on Vercel
+
+---
+
+## 📦 Project Structure
+
